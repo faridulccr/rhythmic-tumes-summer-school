@@ -6,8 +6,8 @@ const ActiveRoute = ({ to, children, ...rest }) => {
             to={to}
             className={({ isActive }) =>
                 isActive
-                    ? "text-[#EEFF25] font-semibold hover:text-pink-300"
-                    : "text-white font-semibold hover:text-pink-300"
+                    ? "hover:text-[#e6a7a7] font-semibold text-black bg-white uppercase p-2 rounded"
+                    : "text-white font-semibold hover:text-[#e6a7a7] uppercase"
             }
             {...rest}
         >

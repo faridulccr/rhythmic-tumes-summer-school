@@ -5,14 +5,14 @@ import ActiveRoute from "./ActiveRoute";
 
 const Header = () => {
     return (
-        <header className="header-style max-w-screen-xl mx-auto bg-[rgba(21,21,21,0.5)] h-20 fixed z-[9999999] w-full px-8 pt-3.5 md:pt-4">
+        <header className="max-w-screen-xl mx-auto bg-[rgba(21,21,21,0.5)] h-20 fixed z-[9999999] w-full px-8 pt-3.5 md:pt-4">
             <nav>
-                <div className="nav-style flex flex-wrap items-center justify-between mx-auto">
-                    <a className=" leading-3 sm:leading-tight" href="/">
-                        <span className="font-[900] text-[0.8rem] sm:text-[1.3rem] block text-white font-['Cinzel']">
+                <div className="flex flex-wrap items-center justify-between mx-auto">
+                    <a className="leading-tight" href="/">
+                        <span className="font-[900] text-[.9rem] xs:text-[1.3rem] block text-white font-['Cinzel']">
                             Rhythmic Tunes
                         </span>
-                        <span className="text-white uppercase tracking-[1.5px] text-[1.2rem] font-[400] font-['Cinzel']">
+                        <span className="text-[#f7f7f7] uppercase tracking-[1.5px] text-[.8rem] xs:text-[1.2rem] font-[400] font-['Cinzel']">
                             Summer School
                         </span>
                     </a>
@@ -38,7 +38,7 @@ const Header = () => {
                         </svg>
                     </button>
                     <div
-                        className="hidden w-full md:block bg-[rgba(21,21,21,0.9)] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0"
+                        className="hidden w-full md:block bg-[#beb1b1] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0"
                         id="navbar-default"
                     >
                         <ul className="font-['Inter'] text-sm flex flex-col items-center md:flex-row gap-3 md:gap-6">
@@ -46,13 +46,14 @@ const Header = () => {
                                 <ActiveRoute to="/">HOME</ActiveRoute>
                             </li>
                             <li>
-                                <ActiveRoute to="dashboard">
-                                    DASHBOARD
+                                <ActiveRoute to="/instructors">
+                                    Instructors
                                 </ActiveRoute>
                             </li>
                             <li>
-                                <Account />
+                                <ActiveRoute to="/classes">Classes</ActiveRoute>
                             </li>
+                            <Account />
                         </ul>
                     </div>
                 </div>

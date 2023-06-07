@@ -1,13 +1,13 @@
 const Footer = () => {
     return (
-        <footer className="text-neutral-content mt-16">
+        <footer className="text-neutral-content">
             <div className="grid sm:grid-cols-2">
                 <div className="bg-[#1F2937] text-center py-10">
                     <h3 className="font-semibold mb-3">CONTACT US</h3>
                     <p>Collage Road, Rangpur, Bangladesh</p>
                     <p>+88 017792-99777</p>
-                    <p>Mon - Fri: 8:00 am - 10:00 pm</p>
-                    <p>Sat - Sun: 10:00 am- 11:00 pm</p>
+                    <p>Mon - Fri: 8:00 am - 12:00 pm</p>
+                    <p>Sat - Sun: 10:00 am - 2:00 pm</p>
                 </div>
                 <div className="bg-[#111827]  text-center py-10">
                     <h3 className=" font-semibold mb-3">Follow US</h3>
@@ -51,8 +51,7 @@ const Footer = () => {
                 </div>
             </div>
             <p className="py-3 text-center bg-[#151515]">
-                Copyright © 2023 - All right reserved by Savory Soiree
-                Restaurant
+                Copyright © 2023 - All right reserved by Rhythmic Tunes
             </p>
         </footer>
     );
