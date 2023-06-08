@@ -101,7 +101,7 @@ const SignUp = () => {
                         )}
                         {errors.password?.type === "maxLength" && (
                             <span className="text-red-600 bg-black p-2 rounded mt-1 inline-block">
-                                Password must be less than 20 or equal
+                                Password must be less than 20 character or equal
                             </span>
                         )}
                         {errors.password?.type === "pattern" && (

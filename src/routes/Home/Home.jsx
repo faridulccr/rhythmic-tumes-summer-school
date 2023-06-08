@@ -1,10 +1,11 @@
 import useTitle from "../../hooks/useTitle";
+import Carosel from "./Carosel";
 
 const Home = () => {
     useTitle("Home");
     return (
         <>
-            <h1>Home</h1>
+            <Carosel />
         </>
     );
 };

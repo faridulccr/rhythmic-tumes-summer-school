@@ -1,9 +1,22 @@
-import "flowbite/dist/flowbite.min.js";
+import { useEffect, useState } from "react";
 import Account from "./Account";
 import "./Account.style.css";
 import ActiveRoute from "./ActiveRoute";
 
 const Header = () => {
+    const [isDark, setIsDark] = useState(false);
+    const [hide, setHide] = useState(true);
+
+    useEffect(() => {
+        if (isDark) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    }, [isDark]);
+
     return (
         <header className="max-w-screen-xl mx-auto bg-[rgba(21,21,21,0.5)] h-20 fixed z-[9999999] w-full px-8 pt-3.5 md:pt-4">
             <nav>
@@ -17,11 +30,8 @@ const Header = () => {
                         </span>
                     </a>
                     <button
-                        data-collapse-toggle="navbar-default"
-                        type="button"
+                        onClick={() => setHide(!hide)}
                         className="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden bg-slate-600 hover:bg-slate-900 focus:outline-none"
-                        aria-controls="navbar-default"
-                        aria-expanded="false"
                     >
                         <svg
                             className="w-6 h-6"
@@ -38,8 +48,9 @@ const Header = () => {
                         </svg>
                     </button>
                     <div
-                        className="hidden w-full md:block bg-[#beb1b1] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0"
-                        id="navbar-default"
+                        className={`${
+                            hide ? "hidden" : "block"
+                        } w-full md:block bg-[#100427] dark:bg-gray-800 md:dark:bg-[rgba(21,21,21,0)] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0`}
                     >
                         <ul className="font-['Inter'] text-sm flex flex-col items-center md:flex-row gap-3 md:gap-6">
                             <li>
@@ -54,6 +65,14 @@ const Header = () => {
                                 <ActiveRoute to="/classes">Classes</ActiveRoute>
                             </li>
                             <Account />
+                            <li
+                                className={`cursor-pointer font-bold text-white md:text-${
+                                    isDark ? "white" : "black"
+                                }`}
+                                onClick={() => setIsDark(!isDark)}
+                            >
+                                {isDark ? "Light Mode" : "Dark Mode"}
+                            </li>
                         </ul>
                     </div>
                 </div>
