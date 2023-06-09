@@ -1,11 +1,17 @@
 import useTitle from "../../hooks/useTitle";
-import Carosel from "./Carosel";
+import Carousel from "./Carousel";
+import PopularInstructors from "./PopularInstructors";
+import Testimonial from "./Testimonial";
+import TopClasses from "./TopClasses";
 
 const Home = () => {
     useTitle("Home");
     return (
         <>
-            <Carosel />
+            <Carousel />
+            <TopClasses />
+            <PopularInstructors />
+            <Testimonial />
         </>
     );
 };

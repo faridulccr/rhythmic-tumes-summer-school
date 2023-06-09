@@ -20,10 +20,10 @@ Read the tasks carefully.
 
 1.  Focus on making the website visually appealing. Ensure that
 
-    - color contrast is pleasing to the eye
-    - the website does not have a **"gobindo design"**
-    - the website has proper alignment and space
-    - Do not directly copy-paste a component design from a component library you are using. You will have to customize the design. (e.g. If you are using DaisyUi & you decided to use a card component, you will have to customize the styling of that card rather than just copy & paste it)
+    -   color contrast is pleasing to the eye
+    -   the website does not have a **"gobindo design"**
+    -   the website has proper alignment and space
+    -   Do not directly copy-paste a component design from a component library you are using. You will have to customize the design. (e.g. If you are using DaisyUi & you decided to use a card component, you will have to customize the styling of that card rather than just copy & paste it)
 
     <br/>
 
@@ -51,12 +51,6 @@ Read the tasks carefully.
 <br/>
 
 5. **Homepage:**
-
-    - **Top Slider Section -** Will have a relevant slider. Use relevant text, information, message, and picture. The design is entirely up to you.
-
-    - **Popular Classes Section -** Show relevant pictures related to the classes or activities. Have the top 6 classes based on the number of students.
-
-    - **Popular Instructors Section -** Show relevant pictures related to the classes or activities. Show the top 6 instructors based on the number of students in their Class. However, selecting top instructors based on the number of students is optional, but you must show 6 instructors.
 
     - **Extra Section -** Add one relevant sections. Make it attractive :heart_eyes:. Try to use animation effects.
 
@@ -143,7 +137,6 @@ Read the tasks carefully.
         > **Note:** If the admin clicks the Deny button, the status will be updated to denied. The Deny and the Approve button will become disabled.
 
         > **Note:** A modal will be opened When the admin clicks the send feedback button. Admin will write the approved/denied reason in a text field and send it to the Instructor. You can also do this in another route except for the modal.
-
 
         </br>
 

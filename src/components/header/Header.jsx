@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import darkIcon from "../../assets/others/dark-mode.png";
+import lightIcon from "../../assets/others/sun-icon.png";
 import Account from "./Account";
 import "./Account.style.css";
 import ActiveRoute from "./ActiveRoute";
@@ -71,7 +73,12 @@ const Header = () => {
                                 }`}
                                 onClick={() => setIsDark(!isDark)}
                             >
-                                {isDark ? "Light Mode" : "Dark Mode"}
+                                <img
+                                    className=" w-8 h-8 bg-[#cec9c9] p-1 rounded-[50%]"
+                                    src={isDark ? lightIcon : darkIcon}
+                                    alt=""
+                                    title={isDark ? "light mode" : "dark mode"}
+                                />
                             </li>
                         </ul>
                     </div>
