@@ -10,7 +10,7 @@ function App() {
     return (
         <section className="max-w-screen-xl mx-auto">
             <Header />
-            <main className="font-['Cinzel']">
+            <main className="google-font">
                 {navigation.state === "loading" ? (
                     <div className="h-[100vh] flex items-center justify-center">
                         <span className="loading loading-dots loading-lg"></span>

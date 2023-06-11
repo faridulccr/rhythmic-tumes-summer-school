@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import Heading from "../../components/Heading.jsx/Heading";
 
 const PopularInstructors = () => {
     const instructor = [
@@ -52,18 +53,18 @@ const PopularInstructors = () => {
             students: 78,
         },
     ];
+    const sortedByStudent = instructor.sort((a, b) => b.students - a.students);
+
     return (
         <div className="my-20">
-            <h1 className="text-center text-4xl font-bold mb-5">
-                Popular Instructors
-            </h1>
+            <Heading>Popular Instructors</Heading>
             <div className="grid sm:grid-cols-3 gap-4 px-2 xl:px-0">
-                {Array.isArray(instructor) &&
-                    instructor.map(
+                {Array.isArray(sortedByStudent) &&
+                    sortedByStudent.map(
                         ({ id, image, name, subject, students, rating }) => (
                             <div
                                 key={id}
-                                className="card w-full bg-[#6672a3] shadow-xl"
+                                className="card w-full bg-[#1289A7] shadow-xl"
                             >
                                 <figure>
                                     <img
@@ -74,8 +75,10 @@ const PopularInstructors = () => {
                                 </figure>
                                 <div className="card-body text-white">
                                     <h2 className="card-title">Name: {name}</h2>
+                                    {/* <p className="font-['Inter']">Email: faridulccr@gmail.com</p>
+                                    <p>Class Taken: 5</p> */}
                                     <p>
-                                        <b>Subject:</b> {subject}
+                                        <b>Classes:</b> {subject}
                                     </p>
                                     <p className=" text-[#0f1744f5] font-bold">
                                         Number of Students: {students}
@@ -86,7 +89,7 @@ const PopularInstructors = () => {
                                         readOnly
                                     />
                                     <div className="card-actions justify-end">
-                                        <button className="btn bg-[#4715709d] text-white hover:bg-[#13041fe1]">
+                                        <button className="btn bg-[#1B1464] text-[#F79F1F] hover:bg-transparent border-none">
                                             Enroll Now
                                         </button>
                                     </div>

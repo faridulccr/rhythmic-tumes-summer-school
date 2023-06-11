@@ -12,22 +12,24 @@ const Header = () => {
     useEffect(() => {
         if (isDark) {
             document.documentElement.classList.add("dark");
+            document.documentElement.classList.remove("bg-[#006266]");
             document.documentElement.setAttribute("data-theme", "dark");
         } else {
             document.documentElement.classList.remove("dark");
+            document.documentElement.classList.add("bg-[#006266]");
             document.documentElement.setAttribute("data-theme", "light");
         }
     }, [isDark]);
 
     return (
-        <header className="max-w-screen-xl mx-auto bg-[rgba(21,21,21,0.5)] h-20 fixed z-[9999999] w-full px-8 pt-3.5 md:pt-4">
+        <header className="max-w-screen-xl mx-auto bg-[rgba(0,98,102,0.5)] h-20 fixed z-[9999999] w-full px-8 pt-3.5 md:pt-4">
             <nav>
                 <div className="flex flex-wrap items-center justify-between mx-auto">
                     <a className="leading-tight" href="/">
-                        <span className="font-[900] text-[.9rem] xs:text-[1.3rem] block text-white font-['Cinzel']">
+                        <span className="font-[900] text-[.9rem] xs:text-[1.3rem] block text-[#F79F1F] font-['Cinzel']">
                             Rhythmic Tunes
                         </span>
-                        <span className="text-[#f7f7f7] uppercase tracking-[1.5px] text-[.8rem] xs:text-[1.2rem] font-[400] font-['Cinzel']">
+                        <span className="text-[#F79F1F] uppercase tracking-[1.5px] text-[.8rem] xs:text-[1.2rem] font-[400] font-['Cinzel']">
                             Summer School
                         </span>
                     </a>
@@ -52,7 +54,7 @@ const Header = () => {
                     <div
                         className={`${
                             hide ? "hidden" : "block"
-                        } w-full md:block bg-[#100427] dark:bg-gray-800 md:dark:bg-[rgba(21,21,21,0)] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0`}
+                        } w-full md:block bg-[rgb(0,98,102)] dark:bg-gray-800 md:dark:bg-[rgba(21,21,21,0)] md:bg-[rgba(21,21,21,0)] md:w-auto px-8 md:px-0 py-4 md:py-0`}
                     >
                         <ul className="font-['Inter'] text-sm flex flex-col items-center md:flex-row gap-3 md:gap-6">
                             <li>
@@ -74,7 +76,7 @@ const Header = () => {
                                 onClick={() => setIsDark(!isDark)}
                             >
                                 <img
-                                    className=" w-8 h-8 bg-[#cec9c9] p-1 rounded-[50%]"
+                                    className=" w-8 h-8 bg-[#FDA7DF] p-1 rounded-[50%]"
                                     src={isDark ? lightIcon : darkIcon}
                                     alt=""
                                     title={isDark ? "light mode" : "dark mode"}

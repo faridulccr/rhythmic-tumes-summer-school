@@ -17,7 +17,7 @@ const Account = () => {
                     title={currentUser?.displayName}
                 />
                 <button
-                    className="text-[#03307e] bg-[#e0e7e0] hover:bg-[#a3a5a3] font-semibold hover:text-[#fff] p-4 rounded-md"
+                    className="text-[##6F1E51] bg-[#A3CB38] hover:bg-[#C4E538] font-semibold p-4 rounded-md"
                     onClick={logout}
                 >
                     LOG OUT
@@ -26,7 +26,7 @@ const Account = () => {
         </>
     ) : (
         <ActiveRoute
-            className=" hover:bg-[#a3a5a3] bg-[#e0e7e0] p-4 rounded-md text-[#03307e] hover:text-[#fff] font-bold"
+            className=" hover:bg-[#C4E538] bg-[#A3CB38] p-4 rounded-md text-[#6F1E51] font-bold"
             to="/login"
         >
             LOG IN

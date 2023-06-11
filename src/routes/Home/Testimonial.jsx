@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import Heading from "../../components/Heading.jsx/Heading";
 
 const Testimonial = () => {
     const testimonial = [
@@ -49,9 +50,7 @@ const Testimonial = () => {
 
     return (
         <div className="my-20">
-            <h1 className="text-center text-4xl font-bold mb-5">
-                Testimonials
-            </h1>
+            <Heading>Testimonials</Heading>
             <div className="carousel w-full">
                 {testimonial.map(({ id, name, comment, rating }) => (
                     <div
@@ -59,7 +58,7 @@ const Testimonial = () => {
                         id={`slide${id}`}
                         className="carousel-item relative w-full"
                     >
-                        <div className="text-center w-5/6 md:w-3/4 mx-auto">
+                        <div className="text-center text-white w-5/6 md:w-3/4 mx-auto">
                             <Rating
                                 className="mx-auto"
                                 style={{ maxWidth: 180 }}

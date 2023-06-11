@@ -4,6 +4,7 @@ import img3 from "../../assets/music/slide3.jpg";
 import img4 from "../../assets/music/slide4.jpg";
 import img5 from "../../assets/music/slide5.jpg";
 import img6 from "../../assets/music/slide6.jpg";
+import Heading from "../../components/Heading.jsx/Heading";
 
 const TopClasses = () => {
     const classesData = [
@@ -62,9 +63,7 @@ const TopClasses = () => {
 
     return (
         <div className="my-20">
-            <h1 className="text-center text-4xl font-bold mb-5">
-                Popular Classes
-            </h1>
+            <Heading>Popular Classes</Heading>
             <div className=" grid sm:grid-cols-3 gap-4 px-2 xl:px-0">
                 {Array.isArray(sortedByStudents) &&
                     sortedByStudents.map(
@@ -81,7 +80,7 @@ const TopClasses = () => {
                                     <p className="block">{subTitle}</p>
                                     <p>Number of Students: {students}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn  bg-[#4715709d] text-white hover:bg-[#13041fe1]">
+                                        <button className="btn bg-[#1B1464] text-[#F79F1F] hover:bg-transparent border-none">
                                             Enroll now!
                                         </button>
                                     </div>

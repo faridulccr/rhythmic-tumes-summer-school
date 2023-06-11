@@ -50,7 +50,7 @@ const Carousel = () => {
                             className="carousel-item w-full relative"
                         >
                             <img src={image} className="w-full h-full" />
-                            <div className="text-center absolute top-1/2 left-1/2 bg-[rgba(0,0,0,0.5)] text-white font-bold w-5/6 md:w-1/2 px-4 md:px-9 py-9 md:py-24 rounded transform -translate-x-1/2 -translate-y-1/2">
+                            <div className="text-center absolute top-1/2 left-1/2 bg-[rgba(0,98,102,0.5)] text-white font-bold w-5/6 md:w-1/2 px-4 md:px-9 py-9 md:py-24 rounded transform -translate-x-1/2 -translate-y-1/2">
                                 <h3 className="text-3xl md:text-5xl mb-5">
                                     {title}
                                 </h3>
