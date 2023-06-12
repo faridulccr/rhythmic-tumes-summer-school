@@ -7,12 +7,12 @@ import "./index.css";
 import App from "./App.jsx";
 import ErrorPage from "./ErrorPage";
 import AuthProvider from "./providers/AuthProvider";
-import Classes from "./routes/Classes/Classes";
-import Dashboard from "./routes/Dashboard/Dashboard";
-import Home from "./routes/Home/Home";
-import Instructors from "./routes/Instructors/Instructors";
-import Login from "./routes/Login/Login";
-import SignUp from "./routes/sign-up/SignUp";
+import Classes from "./pages/Classes/Classes";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Home from "./pages/Home/Home";
+import Instructors from "./pages/Instructors/Instructors";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/sign-up/SignUp";
 
 const router = createBrowserRouter([
     {

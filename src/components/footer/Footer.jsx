@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="text-neutral-content">
+        <footer className="text-neutral-content google-font">
             <div className="grid sm:grid-cols-2">
                 <div className="bg-[#1F2937] text-center py-10">
                     <h3 className="font-semibold mb-3">CONTACT US</h3>

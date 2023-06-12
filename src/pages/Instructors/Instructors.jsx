@@ -8,7 +8,7 @@ const Instructors = () => {
     return (
         <div className="pt-24 pb-5">
             <Heading>All Instructors</Heading>
-            <div className="grid sm:grid-cols-3 gap-4 px-2 xl:px-0">
+            <div className="grid sm:grid-cols-3 gap-4 px-2 xl:px-0 pt-5">
                 {/* {Array.isArray(sortedByStudent) &&
         sortedByStudent.map(
             ({ id, image, name, subject, students, rating }) => ( */}
