@@ -29,7 +29,7 @@ const Login = () => {
         try {
             await login(email, password);
             navigate(location.state?.from || "/");
-            alert("Successfully Logged in!");
+            console.log("Successfully Logged in!");
         } catch (error) {
             alert(error.message);
             console.log(error);

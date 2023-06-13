@@ -17,7 +17,7 @@ const Account = () => {
                     title={currentUser?.displayName}
                 />
                 <button
-                    className="text-[##6F1E51] bg-[#A3CB38] hover:bg-[#C4E538] font-semibold p-4 rounded-md"
+                    className="text-[#6F1E51] bg-[#A3CB38] hover:bg-[#C4E538] font-semibold p-4 rounded-md"
                     onClick={logout}
                 >
                     LOG OUT

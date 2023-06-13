@@ -1,6 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import Heading from "../../components/Heading.jsx/Heading";
+import Heading from "../../components/Heading/Heading";
 
 const Testimonial = () => {
     const testimonial = [

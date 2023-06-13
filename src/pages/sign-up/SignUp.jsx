@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -32,13 +33,37 @@ const SignUp = () => {
 
         try {
             await signUp(email, password, name, photoURL);
+            createUserData(name, photoURL, email);
             navigate(location.state?.from || "/");
-            alert("Successfully Registered!");
+            console.log("Successfully Registered!");
         } catch (error) {
             alert("Registered Failed! Try again.");
             console.log(error);
         }
     };
+
+    // create user in database
+    async function createUserData(name, image, email) {
+        try {
+            const response = await axios.post(
+                `${import.meta.env.VITE_RHYTHMIC_SERVER}/api/create-user`,
+                JSON.stringify({
+                    name,
+                    image,
+                    email,
+                    role: "student",
+                }),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div className="sign-up-page flex justify-center items-center pt-5">

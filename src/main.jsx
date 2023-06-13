@@ -6,13 +6,14 @@ import "./index.css";
 // components
 import App from "./App.jsx";
 import ErrorPage from "./ErrorPage";
-import AuthProvider from "./providers/AuthProvider";
 import Classes from "./pages/Classes/Classes";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
 import Instructors from "./pages/Instructors/Instructors";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/sign-up/SignUp";
+import PrivateRoute from "./PrivateRoute";
+import AuthProvider from "./providers/AuthProvider";
 
 const router = createBrowserRouter([
     {
@@ -20,29 +21,18 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/login",
-                element: <Login />,
-            },
-            {
-                path: "/sign-up",
-                element: <SignUp />,
-            },
-            {
-                path: "/instructors",
-                element: <Instructors />,
-            },
-            {
-                path: "/classes",
-                element: <Classes />,
-            },
+            { path: "/", element: <Home /> },
+            { path: "/login", element: <Login /> },
+            { path: "/sign-up", element: <SignUp /> },
+            { path: "/instructors", element: <Instructors /> },
+            { path: "/classes", element: <Classes /> },
             {
                 path: "/dashboard",
-                element: <Dashboard />,
+                element: (
+                    <PrivateRoute>
+                        <Dashboard />
+                    </PrivateRoute>
+                ),
             },
         ],
     },

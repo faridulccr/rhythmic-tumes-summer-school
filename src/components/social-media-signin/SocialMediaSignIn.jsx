@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import facebook from "../../assets/icon/facebook.png";
 import github from "../../assets/icon/github.png";
@@ -11,7 +12,9 @@ const SocialMediaSignIn = () => {
 
     const signinWithFacebook = async () => {
         try {
-            await facebookSignIn();
+            const result = await facebookSignIn();
+            const { displayName, photoURL, email } = result.user;
+            createUserData(displayName, photoURL, email);
             navigate(location.state?.from || "/");
         } catch (error) {
             console.log(error);
@@ -20,7 +23,9 @@ const SocialMediaSignIn = () => {
 
     const signinWithGoogle = async () => {
         try {
-            await googleSignIn();
+            const result = await googleSignIn();
+            const { displayName, photoURL, email } = result.user;
+            createUserData(displayName, photoURL, email);
             navigate(location.state?.from || "/");
         } catch (error) {
             console.log(error);
@@ -28,12 +33,37 @@ const SocialMediaSignIn = () => {
     };
     const signinWithGithub = async () => {
         try {
-            await githubSignIn();
+            const result = await githubSignIn();
+            const { displayName, photoURL, email } = result.user;
+            createUserData(displayName, photoURL, email);
             navigate(location.state?.from || "/");
         } catch (error) {
             console.log(error);
         }
     };
+
+    // create user in database
+    async function createUserData(name, image, email) {
+        try {
+            const response = await axios.post(
+                `${import.meta.env.VITE_RHYTHMIC_SERVER}/api/create-user`,
+                JSON.stringify({
+                    name,
+                    image,
+                    email,
+                    role: "student",
+                }),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div className="flex justify-center gap-5 sm:gap-10 my-5">

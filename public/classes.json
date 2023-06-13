@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Guitar 101",
+        "image": "https://www.blackburnguitarlessons.co.uk/wp-content/uploads/2011/01/guitarlessons4.jpg",
+        "instructor": "Jane Doe",
+        "email": "janedoe@example.com",
+        "seats": 10,
+        "price": 75,
+        "status": "pending",
+        "enrolledStudents": 90,
+        "description": "Learn the fundamentals of playing the guitar, including chords, strumming techniques, and basic music theory."
+    },
+    {
+        "name": "Singing Basics",
+        "image": "https://media.istockphoto.com/id/673437090/photo/man-holding-microphone-in-front-of-an-abstract-music-and-note-background-karaoke-or-singing.jpg?s=612x612&w=0&k=20&c=xD2TF0bH30Ym-NvQoPFeBkWa2iGqkzi_IjuARERp2Og=",
+        "instructor": "Sarah Anderson",
+        "email": "sarah@example.com",
+        "seats": 20,
+        "price": 60,
+        "status": "pending",
+        "enrolledStudents": 80,
+        "description": "Develop your vocal skills and learn proper breathing techniques, pitch control, and performance tips."
+    },
+    {
+        "name": "Drum Workshop",
+        "image": "https://media.gettyimages.com/id/134955273/photo/drum-room.jpg?s=612x612&w=gi&k=20&c=lnrXucs_rzdKFjCD8bwuyC8Kt3YaZJMTkOHsw6JD5Bs=",
+        "instructor": "David Johnson",
+        "email": "david@example.com",
+        "seats": 24,
+        "price": 80,
+        "status": "pending",
+        "enrolledStudents": 76,
+        "description": "Experience hands-on drumming lessons covering various beats, drum patterns, and rhythm exercises."
+    },
+    {
+        "name": "Violin Masterclass",
+        "image": "https://www.rcm.ac.uk/included/eventimages/_violin3.jpg",
+        "instructor": "Emily Thompson",
+        "email": "emily@example.com",
+        "seats": 30,
+        "price": 90,
+        "status": "pending",
+        "enrolledStudents": 70,
+        "description": "Immerse yourself in the world of violin playing with comprehensive lessons on technique, bowing, and musical expression."
+    },
+    {
+        "name": "Keyboard Basics",
+        "image": "https://www.wikihow.com/images/thumb/1/1c/Play-Bassline-when-Playing-the-Piano-Step-2.jpg/v4-460px-Play-Bassline-when-Playing-the-Piano-Step-2.jpg.webp",
+        "instructor": "Emily Brown",
+        "email": "emilybrown@example.com",
+        "seats": 40,
+        "price": 50,
+        "status": "pending",
+        "enrolledStudents": 60,
+        "description": "Discover the essentials of playing the keyboard, including hand positions, scales, and popular melodies."
+    },
+    {
+        "name": "Songwriting",
+        "image": "https://images.squarespace-cdn.com/content/v1/53ab14b2e4b000807cbeb82c/1405003127674-OZ8ASQTVWIDI5XKVZR0J/songwriter.jpg",
+        "instructor": "Jessica Roberts",
+        "email": "jessica@example.com",
+        "seats": 50,
+        "price": 70,
+        "status": "pending",
+        "enrolledStudents": 50,
+        "description": "Unleash your creativity and learn the art of crafting compelling lyrics, melodies, and song structures."
+    },
+    {
+        "name": "Bass Guitar Fundamentals",
+        "image": "https://media.istockphoto.com/id/1386865346/photo/hobbies-and-music-concepts-expressive-caucasian-guitar-player-with-yellow-bass-guitar-posing.jpg?s=612x612&w=0&k=20&c=3HapV7q4YOWVgKUCo0suwq9v-kg8GOQwoZIynAyaCik=",
+        "instructor": "Matthew Wilson",
+        "email": "matthew@example.com",
+        "seats": 45,
+        "price": 65,
+        "status": "pending",
+        "enrolledStudents": 55,
+        "description": "Explore the basics of playing the bass guitar, including techniques, scales, and creating grooves."
+    },
+    {
+        "name": "Music Theory 101",
+        "image": "https://t4.ftcdn.net/jpg/02/38/05/21/360_F_238052111_WxOJ2Y5z7QLFEWvIrRrAOVsZ21OVw5qI.jpg",
+        "instructor": "Robert Johnson",
+        "email": "rjohnson@example.com",
+        "seats": 2,
+        "price": 55,
+        "status": "pending",
+        "enrolledStudents": 98,
+        "description": "Develop a solid foundation in music theory, covering topics such as notation, scales, chords, and harmony."
+    },
+    {
+        "name": "Flute Lessons",
+        "image": "https://media.istockphoto.com/id/479526668/photo/cute-pupil-playing-flute-in-classroom.jpg?s=612x612&w=0&k=20&c=woo4JuFY5Suf-ApGHU5ZQL8Hb4f85Gxr-ejNcRaZ2rc=",
+        "instructor": "Amy Wilson",
+        "email": "amywilson@example.com",
+        "seats": 90,
+        "price": 75,
+        "status": "pending",
+        "enrolledStudents": 10,
+        "description": "Embark on a journey of learning the flute, focusing on proper embouchure, breath control, and playing melodies."
+    }
+]
