@@ -5,6 +5,7 @@ import "./index.css";
 
 // components
 import App from "./App.jsx";
+import Payment from "./components/payment/Payment";
 import ErrorPage from "./ErrorPage";
 import Classes from "./pages/Classes/Classes";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
                 element: (
                     <PrivateRoute>
                         <Dashboard />
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/payment/:id",
+                element: (
+                    <PrivateRoute>
+                        <Payment />
                     </PrivateRoute>
                 ),
             },

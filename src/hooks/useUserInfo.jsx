@@ -10,16 +10,12 @@ const useUserInfo = (isAll) => {
     useEffect(() => {
         const getData = async () => {
             if (currentUser) {
+                const path = isAll == "all" ? "users" : "single-user";
                 try {
                     const response = await axios.get(
-                        `${import.meta.env.VITE_RHYTHMIC_SERVER}/api/${
-                            isAll == "all" ? "users" : "single-user"
-                        }`,
-                        {
-                            params: {
-                                email: currentUser?.email,
-                            },
-                        }
+                        `${
+                            import.meta.env.VITE_RHYTHMIC_SERVER
+                        }/api/${path}?email=${currentUser?.email}`
                     );
                     // console.log(response.data);
                     setData(response.data);

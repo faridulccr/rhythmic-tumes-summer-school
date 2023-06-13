@@ -1,8 +1,9 @@
 import useTitle from "../../hooks/useTitle";
 import useUserInfo from "../../hooks/useUserInfo";
-import AdminDashboard from "./AdminDashboard";
-import InstructorDashboard from "./InstructorDashboard";
-import StudentsDashboard from "./StudentsDashboard";
+import "./Dashboard.style.css";
+import AdminDashboard from "./adminDashboard/AdminDashboard";
+import InstructorDashboard from "./instructorDashboard/InstructorDashboard";
+import StudentsDashboard from "./studentDashboard/StudentsDashboard";
 
 const Dashboard = () => {
     useTitle("dashboard");
@@ -10,7 +11,7 @@ const Dashboard = () => {
     const userRole = userData.role;
 
     return (
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-auto pt-24">
             {loading && (
                 <div className="h-[80vh] flex items-center justify-center">
                     <span className="loading loading-dots loading-lg"></span>

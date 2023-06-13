@@ -12,7 +12,7 @@ const TopClasses = () => {
     return (
         <div className="my-20">
             <Heading>Popular Classes</Heading>
-            <div className=" grid sm:grid-cols-3 gap-4 px-2 xl:px-0">
+            <div className="class-sec grid sm:grid-cols-3 gap-4 px-2 xl:px-0">
                 {!loading &&
                     Array.isArray(sortedByStudents) &&
                     sortedByStudents.map(
@@ -26,7 +26,7 @@ const TopClasses = () => {
                         }) => (
                             <div
                                 key={_id}
-                                className="card w-full bg-base-100 shadow-xl image-full text-white"
+                                className="card w-full shadow-xl image-full"
                             >
                                 <figure>
                                     <img src={image} alt={name} />

@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes backToHome {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-backToHome {
+    animation: backToHome 1s infinite;
+}
+
+.class-sec .card.image-full:before {
+    position: relative;
+    content: "";
+    z-index: 10;
+    --tw-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.75;
+    border-radius: var(--rounded-box, 1rem);
+}

@@ -11,6 +11,12 @@ const ErrorPage = () => {
             id="error-page"
         >
             <div className="w-full md:w-1/2 text-center google-font">
+                <a
+                    href="/"
+                    className="btn btn-primary btn-lg animate-backToHome"
+                >
+                    Back to Home
+                </a>
                 <img
                     className="max-w-sm h-auto mx-auto rounded-lg"
                     src={img}
