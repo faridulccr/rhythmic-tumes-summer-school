@@ -44,7 +44,9 @@ const InstructorDashboard = ({ instructorData }) => {
                         name={instructorData.name}
                     />
                 )}
-                {activeTab == "mc" && <MyClasses />}
+                {activeTab == "mc" && (
+                    <MyClasses email={instructorData.email} />
+                )}
             </main>
         </div>
     );

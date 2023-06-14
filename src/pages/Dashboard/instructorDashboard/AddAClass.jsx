@@ -22,7 +22,6 @@ const AddAClass = ({ name, email }) => {
                     email,
                     seats,
                     price,
-                    status: "pending",
                     description: description || "",
                 })
             );
