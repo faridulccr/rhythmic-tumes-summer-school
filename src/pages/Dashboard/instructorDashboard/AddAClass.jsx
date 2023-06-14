@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import Input from "../../../components/input/Input";
 
@@ -9,9 +10,27 @@ const AddAClass = ({ name, email }) => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        const { className, image, price } = data;
+        const { className, image, seats, price, description } = data;
         try {
-            console.log(className, image, name, email, price);
+            // console.log(className, image, name, email, price);
+            const response = await axios.post(
+                `${import.meta.env.VITE_RHYTHMIC_SERVER}/api/add-class`,
+                JSON.stringify({
+                    name: className,
+                    image,
+                    instructor: name,
+                    email,
+                    seats,
+                    price,
+                    status: "pending",
+                    description: description || "",
+                })
+            );
+            if (response.data.message) {
+                alert(response.data.message);
+            } else if (response.data.error) {
+                alert(response.data.error);
+            }
         } catch (error) {
             alert("Failed to Add! Try again.");
             console.log(error);
@@ -76,6 +95,12 @@ const AddAClass = ({ name, email }) => {
                         Price is required
                     </span>
                 )}
+                <Input
+                    placeholder="Class description (Optional)"
+                    options={{
+                        ...register("description", { required: false }),
+                    }}
+                />
 
                 <div className="form-control mt-6">
                     <input
