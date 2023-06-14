@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { BiHome } from "react-icons/bi";
+import AddAClass from "./AddAClass";
+import MyClasses from "./MyClasses";
 
 const InstructorDashboard = ({ instructorData }) => {
-    const [activeTab, setActiveTab] = useState("selected-classes");
+    const [activeTab, setActiveTab] = useState("aac");
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
@@ -17,29 +19,32 @@ const InstructorDashboard = ({ instructorData }) => {
                     <BiHome size={24} /> Home
                 </a>
                 <a
-                    href="#"
-                    className="text-white sm:mb-8 hover:text-[#F79F1F]"
-                    onClick={() => handleTabClick("selected-classes")}
+                    className={`text-white sm:mb-8 hover:text-[#F79F1F] py-1 px-1 rounded cursor-pointer ${
+                        activeTab == "aac" && "bg-[#1B1464]"
+                    }`}
+                    onClick={() => handleTabClick("aac")}
                 >
-                    My Selected Classes
+                    Add A Class
                 </a>
                 <a
-                    href="#"
-                    className="text-white sm:mb-8 hover:text-[#F79F1F]"
-                    onClick={() => handleTabClick("enrolled-classes")}
+                    className={`text-white sm:mb-8 hover:text-[#F79F1F] py-1 px-1 rounded cursor-pointer ${
+                        activeTab == "mc" && "bg-[#1B1464]"
+                    }`}
+                    onClick={() => handleTabClick("mc")}
                 >
-                    My Enrolled Classes
+                    My Classes
                 </a>
             </nav>
 
             {/* Main Content */}
             <main className="bg-[rgba(0,0,0,0.4)] p-6">
-                {activeTab == "selected-classes" && (
-                    <div>My selected-classes</div>
+                {activeTab == "aac" && (
+                    <AddAClass
+                        email={instructorData.email}
+                        name={instructorData.name}
+                    />
                 )}
-                {activeTab == "enrolled-classes" && (
-                    <div>My enrolled-classes</div>
-                )}
+                {activeTab == "mc" && <MyClasses />}
             </main>
         </div>
     );

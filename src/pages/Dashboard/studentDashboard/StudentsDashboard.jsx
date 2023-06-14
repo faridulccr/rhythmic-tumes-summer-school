@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { BiHome } from "react-icons/bi";
+import EnrolledClasses from "./EnrolledClasses";
 import SelectedClasses from "./SelectedClasses";
 
 const StudentsDashboard = ({ studentData }) => {
-    const [activeTab, setActiveTab] = useState("selected-classes");
+    const [activeTab, setActiveTab] = useState("msc");
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
@@ -19,16 +20,18 @@ const StudentsDashboard = ({ studentData }) => {
                     <BiHome size={24} /> Home
                 </a>
                 <a
-                    href="#"
-                    className="text-white sm:mb-8 hover:text-[#F79F1F]"
-                    onClick={() => handleTabClick("selected-classes")}
+                    className={`text-white sm:mb-8 hover:text-[#F79F1F] py-1 px-1 rounded cursor-pointer ${
+                        activeTab == "msc" && "bg-[#1B1464]"
+                    }`}
+                    onClick={() => handleTabClick("msc")}
                 >
                     My Selected Classes
                 </a>
                 <a
-                    href="#"
-                    className="text-white sm:mb-8 hover:text-[#F79F1F]"
-                    onClick={() => handleTabClick("enrolled-classes")}
+                    className={`text-white sm:mb-8 hover:text-[#F79F1F] py-1 px-1 rounded cursor-pointer ${
+                        activeTab == "mec" && "bg-[#1B1464]"
+                    }`}
+                    onClick={() => handleTabClick("mec")}
                 >
                     My Enrolled Classes
                 </a>
@@ -36,14 +39,17 @@ const StudentsDashboard = ({ studentData }) => {
 
             {/* Main Content */}
             <div className="bg-[rgba(0,0,0,0.4)] p-6 overflow-auto ">
-                {activeTab == "selected-classes" && (
+                {activeTab == "msc" && (
                     <SelectedClasses
-                        classesID={studentData.selectedClasses}
+                        classesID={studentData.selectedClasses || []}
                         email={studentData.email}
                     />
                 )}
-                {activeTab == "enrolled-classes" && (
-                    <div className="text-white">My enrolled-classes</div>
+                {activeTab == "mec" && (
+                    <EnrolledClasses
+                        classesID={studentData.enrolledClasses || []}
+                        email={studentData.email}
+                    />
                 )}
             </div>
         </div>
