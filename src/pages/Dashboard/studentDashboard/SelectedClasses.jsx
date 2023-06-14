@@ -1,8 +1,9 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import useClasses from "../../../hooks/useClasses";
 
-const SelectedClasses = ({ classesID }) => {
+const SelectedClasses = ({ classesID, email }) => {
     const [classes, loading] = useClasses();
     const [selectedClasses, setSelectedClasses] = useState([]);
 
@@ -15,6 +16,18 @@ const SelectedClasses = ({ classesID }) => {
 
     const handleDelete = async (id) => {
         setSelectedClasses((prev) => prev.filter((c) => c._id != id));
+
+        try {
+            // sent unselect request
+            const response = await axios.put(
+                `${
+                    import.meta.env.VITE_RHYTHMIC_SERVER
+                }/api/user/unselected-class?id=${id}&email=${email}`
+            );
+            console.log(response.data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (

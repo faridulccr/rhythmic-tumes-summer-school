@@ -37,7 +37,10 @@ const StudentsDashboard = ({ studentData }) => {
             {/* Main Content */}
             <div className="bg-[rgba(0,0,0,0.4)] p-6 overflow-auto ">
                 {activeTab == "selected-classes" && (
-                    <SelectedClasses classesID={studentData.selectedClasses} />
+                    <SelectedClasses
+                        classesID={studentData.selectedClasses}
+                        email={studentData.email}
+                    />
                 )}
                 {activeTab == "enrolled-classes" && (
                     <div className="text-white">My enrolled-classes</div>

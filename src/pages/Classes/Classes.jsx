@@ -45,23 +45,21 @@ const Classes = () => {
         } else {
             // update userData
             userData.selectedClasses.push(id);
+            setClasses([...classData]);
 
-            // update classes
-            const updatedClasses = classes.map((item) => {
-                if (item._id == id) {
-                    item.seats = item.seats - 1;
-                    return item;
-                } else return item;
-            });
-            setClasses(updatedClasses);
-
-            // send update request to select
-            const response = await axios.put(
-                `${
-                    import.meta.env.VITE_RHYTHMIC_SERVER
-                }/api/selected-class?id=${id}&email=${currentUser?.email}`
-            );
-            console.log(response.data);
+            try {
+                // send update request to select
+                const response = await axios.put(
+                    `${
+                        import.meta.env.VITE_RHYTHMIC_SERVER
+                    }/api/user/selected-class?id=${id}&email=${
+                        currentUser?.email
+                    }`
+                );
+                console.log(response.data);
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
