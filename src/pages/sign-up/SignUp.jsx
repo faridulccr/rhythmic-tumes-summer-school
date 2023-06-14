@@ -157,7 +157,7 @@ const SignUp = () => {
                         </Input>
                         {errors.confirm_password?.type === "required" && (
                             <span className="text-red-600 bg-black p-2 rounded mt-1 inline-block">
-                                Name is required
+                                Confirm Password is required
                             </span>
                         )}
                         <Input

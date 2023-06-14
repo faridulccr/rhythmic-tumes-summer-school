@@ -37,7 +37,7 @@ const InstructorDashboard = ({ instructorData }) => {
             </nav>
 
             {/* Main Content */}
-            <main className="bg-[rgba(0,0,0,0.4)] p-6">
+            <main className="bg-[rgba(0,0,0,0.4)] p-6 overflow-auto">
                 {activeTab == "aac" && (
                     <AddAClass
                         email={instructorData.email}
