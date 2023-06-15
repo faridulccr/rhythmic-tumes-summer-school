@@ -15,7 +15,7 @@ const MyClasses = ({ email }) => {
                         <th>Enrolled Students</th>
                         <th>Price</th>
                         <th></th>
-                        <th></th>
+                        <th>Feedback</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,15 +23,22 @@ const MyClasses = ({ email }) => {
                         Array.isArray(myClasses) &&
                         myClasses.map(
                             (
-                                { _id, status, name, price, enrolledStudents },
+                                {
+                                    _id,
+                                    status,
+                                    name,
+                                    price,
+                                    enrolledStudents,
+                                    feedback,
+                                },
                                 i
                             ) => (
                                 <tr key={_id}>
                                     <th>{i + 1}</th>
                                     <td>{status}</td>
                                     <td>{name}</td>
-                                    <td>${price}</td>
                                     <td>{enrolledStudents}</td>
+                                    <td>${price}</td>
                                     <td>
                                         <a
                                             // href={`/class-update/${_id}`}
@@ -40,15 +47,10 @@ const MyClasses = ({ email }) => {
                                             Update
                                         </a>
                                     </td>
-                                    <td>
-                                        <a
-                                            // href={`/class-update/${_id}`}
-                                            className="btn btn-outline btn-success"
-                                            disabled={status != "denied"}
-                                        >
-                                            Feedback
-                                        </a>
-                                    </td>
+
+                                    {status === "denied" && (
+                                        <td>{feedback || ""}</td>
+                                    )}
                                 </tr>
                             )
                         )}

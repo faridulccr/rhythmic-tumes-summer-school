@@ -5,6 +5,8 @@ import useClasses from "../../../hooks/useClasses";
 const ManageClasses = () => {
     const [classes, loading] = useClasses();
     const [allClasses, setAllClasses] = useState([]);
+    const [classId, setClassId] = useState("");
+    const [message, setMessage] = useState("");
 
     useEffect(() => {
         !loading && setAllClasses(classes);
@@ -32,7 +34,30 @@ const ManageClasses = () => {
         }
     };
 
-    // const handleFeedback = (instructorEmail) => {};
+    const handleFeedback = async () => {
+        if (message) {
+            try {
+                // sent status change request
+                const response = await axios.put(
+                    `${
+                        import.meta.env.VITE_RHYTHMIC_SERVER
+                    }/api/send-feedback?id=${classId}`,
+                    JSON.stringify({
+                        message,
+                    }),
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
+                response.data.message && alert(response.data.message);
+                setMessage("");
+            } catch (error) {
+                console.log(error);
+            }
+        } else alert("Please write something before send!");
+    };
 
     return (
         <div>
@@ -93,12 +118,6 @@ const ManageClasses = () => {
                                         Approve
                                     </button>
                                     <button
-                                        // onClick={() => handleFeedback(email)}
-                                        className="btn btn-outline btn-warning"
-                                    >
-                                        Feedback
-                                    </button>
-                                    <button
                                         onClick={() =>
                                             handleStatus("denied", _id)
                                         }
@@ -110,11 +129,45 @@ const ManageClasses = () => {
                                     >
                                         Deny
                                     </button>
+                                    <button
+                                        onClick={() => {
+                                            window.my_modal_3.showModal();
+                                            setClassId(_id);
+                                        }}
+                                        className="btn btn-outline btn-warning"
+                                    >
+                                        Feedback
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     )
                 )}
+
+            <dialog id="my_modal_3" className="modal">
+                <form method="dialog" className="modal-box">
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        ✕
+                    </button>
+                    <textarea
+                        className="w-full mt-5 p-2 overflow-y-auto"
+                        name="feedback"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        placeholder="Write the reason for approved/denied."
+                        onChange={(e) => setMessage(e.target.value)}
+                        value={message}
+                    ></textarea>
+
+                    <p
+                        onClick={handleFeedback}
+                        className="btn btn-outline btn-accent"
+                    >
+                        Send
+                    </p>
+                </form>
+            </dialog>
         </div>
     );
 };
