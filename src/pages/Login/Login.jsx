@@ -93,7 +93,7 @@ const Login = () => {
                             <input
                                 type="submit"
                                 className="btn bg-[#D1A054] text-white hover:bg-[#060330]"
-                                value="Login in"
+                                value="Log in"
                             />
                         </div>
                     </form>
