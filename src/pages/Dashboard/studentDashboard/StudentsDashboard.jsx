@@ -10,7 +10,7 @@ const StudentsDashboard = ({ studentData }) => {
     };
 
     return (
-        <div className="dashboard h-screen">
+        <div className="dashboard min-h-screen">
             {/* Left-side Navbar */}
             <nav className="bg-[rgba(0,0,0,0.2)] sm:ps-5 flex flex-col xs:flex-row sm:flex-col justify-center items-center xs:items-start sm:justify-start gap-5 sm:gap-0 py-4">
                 <a

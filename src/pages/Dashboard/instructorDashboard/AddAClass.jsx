@@ -7,6 +7,7 @@ const AddAClass = ({ name, email }) => {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm();
 
     const onSubmit = async (data) => {
@@ -23,10 +24,16 @@ const AddAClass = ({ name, email }) => {
                     seats,
                     price,
                     description: description || "",
-                })
+                }),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
             );
             if (response.data.message) {
                 alert(response.data.message);
+                reset();
             } else if (response.data.error) {
                 alert(response.data.error);
             }

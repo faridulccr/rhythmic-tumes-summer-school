@@ -6,38 +6,11 @@
 
 <br/>
 
-8.  **Student Dashboard:**
-
 9.  **Payment: (Student Dashboard)**
 
     -   **Pay button Action:** Upon clicking the **Pay button** for a Class on the My Selected Classes, the student will be redirected to the payment page to finalize their payment. After a successful payment, the **Available seats** for the particular Class will be reduced by 1. The Class information will be shown on the **My Enrolled Classes page**and removed from the **My Selected Classes page**.
 
     -   Create a payment history page for students. It will show the payment made by that student. Make sure to sort the payment history descending. The newest payment will be at the top
-
-<br/>
-
-10. **Instructor Dashboard:**
-    <br/>
-    **_It will be private & only an instructor can access this route._**
-
-    -   **Add a Class:** This page will have a form with the following fields:
-
-        -   Class name
-        -   Class Image
-        -   Instructor name (read-only) **(use the displayName value of logged in user/instructor)**
-        -   Instructor email (read-only) **(use the email value of logged in user/instructor)**
-        -   Available seats
-        -   Price
-        -   Add button
-        -   When creating a class on the database, the value of the status field will be pending.
-
-    -   **My Classes:** Show all the Classes an instructor has added after clicking the **Add button** from the **Add a Class page**. Each Class will show relevant information, including **pending/ approved/ denied** status, **Total Enrolled Students**, **Feedback** & **Update button**.
-
-        -   **Total Enrolled Students:** Initially it will be zero. If any student has successfully booked the Class, show the total number of students.
-
-        -   **Feedback:**
-            -   There will be no feedback if the Class is in pending or approved status.
-            -   If the Class is in the denied state by the admin, at that time, an admin can write feedback explaining why the Class was denied, which will appear in the feedback column.
 
 <br/>
 

@@ -35,17 +35,18 @@ const MyClasses = ({ email }) => {
                                     <td>
                                         <a
                                             // href={`/class-update/${_id}`}
-                                            className="btn btn-outline btn-success"
+                                            className="btn btn-outline btn-secondary"
                                         >
-                                            Feedback
+                                            Update
                                         </a>
                                     </td>
                                     <td>
                                         <a
                                             // href={`/class-update/${_id}`}
-                                            className="btn btn-outline btn-secondary"
+                                            className="btn btn-outline btn-success"
+                                            disabled={status != "denied"}
                                         >
-                                            Update
+                                            Feedback
                                         </a>
                                     </td>
                                 </tr>

@@ -21,8 +21,10 @@ const TopClasses = () => {
                             image,
                             name,
                             instructor,
+                            email,
                             price,
                             description,
+                            enrolledStudents,
                         }) => (
                             <div
                                 key={_id}
@@ -39,7 +41,13 @@ const TopClasses = () => {
                                         {description}
                                     </p>
                                     <p className="block text-xl">
+                                        Enrolled Students: {enrolledStudents}
+                                    </p>
+                                    <p className="block text-xl">
                                         <b>Instructor:</b> {instructor}
+                                    </p>
+                                    <p className="block text-xl">
+                                        <b>Email:</b> {email}
                                     </p>
                                     <p className="block text-xl">
                                         <b>Price:</b> {price}
