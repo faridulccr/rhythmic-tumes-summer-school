@@ -15,6 +15,7 @@ const SelectedClasses = ({ classesID, userEmail }) => {
     }, [loading, classes, classesID]);
 
     const handleDelete = async (id) => {
+        classesID.splice(classesID.indexOf(id), 1);
         setSelectedClasses((prev) => prev.filter((c) => c._id != id));
 
         try {
