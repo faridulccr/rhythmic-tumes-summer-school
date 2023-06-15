@@ -68,7 +68,7 @@ const SelectedClasses = ({ classesID, email }) => {
                                     <td>{instructor}</td>
                                     <td>{email}</td>
                                     <td>{seats}</td>
-                                    <td>{price}</td>
+                                    <td>${price}</td>
                                     <td>{enrolledStudents}</td>
                                     <td className="flex justify-center">
                                         <AiOutlineDelete

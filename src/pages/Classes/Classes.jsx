@@ -95,7 +95,7 @@ const Classes = () => {
                                     </h2>
                                     <p>Instructor: {instructor} </p>
                                     <p>Available seats: {seats} </p>
-                                    <p>Price: {price} </p>
+                                    <p>Price: ${price} </p>
                                     <div className="card-actions justify-end">
                                         <button
                                             onClick={() => handleSelect(_id)}

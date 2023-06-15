@@ -20,7 +20,7 @@ const ManageClasses = () => {
         setAllClasses(updatedClasses);
 
         try {
-            // sent unselect request
+            // sent status change request
             const response = await axios.put(
                 `${
                     import.meta.env.VITE_RHYTHMIC_SERVER
@@ -74,7 +74,7 @@ const ManageClasses = () => {
                                     <b>Available seats: {seats}</b>
                                 </p>
                                 <p>
-                                    <b>Price: {price}</b>
+                                    <b>Price: ${price}</b>
                                 </p>
                                 <p>
                                     <b>Status: {status}</b>

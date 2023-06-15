@@ -30,7 +30,7 @@ const MyClasses = ({ email }) => {
                                     <th>{i + 1}</th>
                                     <td>{status}</td>
                                     <td>{name}</td>
-                                    <td>{price}</td>
+                                    <td>${price}</td>
                                     <td>{enrolledStudents}</td>
                                     <td>
                                         <a

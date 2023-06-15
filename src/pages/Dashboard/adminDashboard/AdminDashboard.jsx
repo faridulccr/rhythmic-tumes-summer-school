@@ -38,7 +38,7 @@ const AdminDashboard = ({ adminData }) => {
             </nav>
 
             {/* Main Content */}
-            <main className="bg-[rgba(0,0,0,0.4)] p-6">
+            <main className="bg-[rgba(0,0,0,0.4)] p-6 overflow-auto">
                 {activeTab == "mc" && <ManageClasses />}
                 {activeTab == "mu" && (
                     <ManageUsers adminEmail={adminData.email} />

@@ -55,17 +55,5 @@
         "classes": ["Bass Guitar Fundamentals"],
         "role": "instructor",
         "rating": 78
-    },
-    {
-        "username": null,
-        "email": "faridulccr@gmail.com",
-        "role": "student",
-        "selectedClasses": []
-    },
-    {
-        "username": null,
-        "email": "faridulislam777@outlook.com",
-        "role": "student",
-        "selectedClasses": []
     }
 ]

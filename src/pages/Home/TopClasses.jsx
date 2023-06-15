@@ -50,7 +50,7 @@ const TopClasses = () => {
                                         <b>Email:</b> {email}
                                     </p>
                                     <p className="block text-xl">
-                                        <b>Price:</b> {price}
+                                        <b>Price:</b> ${price}
                                     </p>
                                 </div>
                             </div>
