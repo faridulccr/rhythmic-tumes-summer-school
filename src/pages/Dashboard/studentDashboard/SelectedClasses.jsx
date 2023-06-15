@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
 import useClasses from "../../../hooks/useClasses";
 
-const SelectedClasses = ({ classesID, email }) => {
+const SelectedClasses = ({ classesID, userEmail }) => {
     const [classes, loading] = useClasses();
     const [selectedClasses, setSelectedClasses] = useState([]);
 
@@ -22,7 +22,7 @@ const SelectedClasses = ({ classesID, email }) => {
             const response = await axios.put(
                 `${
                     import.meta.env.VITE_RHYTHMIC_SERVER
-                }/api/user/unselected-class?id=${id}&email=${email}`
+                }/api/user/unselected-class?id=${id}&email=${userEmail}`
             );
             console.log(response.data);
         } catch (error) {

@@ -41,15 +41,12 @@ const StudentsDashboard = ({ studentData }) => {
             <div className="bg-[rgba(0,0,0,0.4)] p-6 overflow-auto ">
                 {activeTab == "msc" && (
                     <SelectedClasses
-                        classesID={studentData.selectedClasses || []}
-                        email={studentData.email}
+                        classesID={studentData.selectedClasses}
+                        userEmail={studentData.email}
                     />
                 )}
                 {activeTab == "mec" && (
-                    <EnrolledClasses
-                        classesID={studentData.enrolledClasses || []}
-                        email={studentData.email}
-                    />
+                    <EnrolledClasses classesID={studentData.enrolledClasses} />
                 )}
             </div>
         </div>

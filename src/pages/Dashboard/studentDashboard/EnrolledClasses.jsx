@@ -1,4 +1,9 @@
-const EnrolledClasses = () => {
+import useClasses from "../../../hooks/useClasses";
+
+const EnrolledClasses = ({ classesID }) => {
+    const [classes, loading] = useClasses();
+    const enrolledClasses = classes.filter((c) => classesID.includes(c._id));
+
     return (
         <div className="overflow-auto">
             <table className="table table-xs min-w-[650px] text-white">
@@ -14,9 +19,9 @@ const EnrolledClasses = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {!loading &&
-                        Array.isArray(selectedClasses) &&
-                        selectedClasses.map(
+                    {!loading &&
+                        Array.isArray(enrolledClasses) &&
+                        enrolledClasses.map(
                             (
                                 {
                                     _id,
@@ -28,18 +33,18 @@ const EnrolledClasses = () => {
                                     enrolledStudents,
                                 },
                                 i
-                            ) => ( */}
-                    <tr>
-                        <th>1</th>
-                        <td>name</td>
-                        <td>instructor</td>
-                        <td>email</td>
-                        <td>seats</td>
-                        <td>enrolledStudents</td>
-                        <td>$price</td>
-                    </tr>
-                    {/* )
-                        )} */}
+                            ) => (
+                                <tr key={_id}>
+                                    <th>{i + 1}</th>
+                                    <td>{name}</td>
+                                    <td>{instructor}</td>
+                                    <td>{email}</td>
+                                    <td>{seats}</td>
+                                    <td>{enrolledStudents}</td>
+                                    <td>${price}</td>
+                                </tr>
+                            )
+                        )}
                 </tbody>
             </table>
         </div>
