@@ -50,6 +50,7 @@ const ManageUsers = ({ adminEmail }) => {
                         <th>Email</th>
                         <th>Role</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,8 +69,9 @@ const ManageUsers = ({ adminEmail }) => {
                                 <td>{name}</td>
                                 <td>{email}</td>
                                 <td>{role}</td>
-                                {role !== "instructor" && (
-                                    <td>
+
+                                <td>
+                                    {role !== "instructor" && (
                                         <button
                                             onClick={() =>
                                                 handleRole("instructor", email)
@@ -78,10 +80,11 @@ const ManageUsers = ({ adminEmail }) => {
                                         >
                                             Make Instructor
                                         </button>
-                                    </td>
-                                )}
-                                {role !== "admin" && (
-                                    <td>
+                                    )}
+                                </td>
+
+                                <td>
+                                    {role !== "admin" && (
                                         <button
                                             onClick={() =>
                                                 handleRole("admin", email)
@@ -90,8 +93,8 @@ const ManageUsers = ({ adminEmail }) => {
                                         >
                                             Make Admin
                                         </button>
-                                    </td>
-                                )}
+                                    )}
+                                </td>
                             </tr>
                         ))}
                 </tbody>
