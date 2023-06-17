@@ -14,7 +14,7 @@ const Payment = () => {
 
     const options = {
         mode: "payment",
-        amount: Math.floor((location.state?.price || 0) * 100),
+        amount: Math.floor(location.state?.price * 100),
         currency: "usd",
         // Fully customizable with appearance API.
         appearance: {
@@ -24,7 +24,7 @@ const Payment = () => {
 
     return (
         <div className="flex justify-center items-center h-screen pt-24 mb-24">
-            <div className="max-w-md w-full mx-auto p-4">
+            <div className="max-w-md w-full mx-auto p-4 overflow-auto">
                 <h1 className="text-2xl text-center font-bold mb-4 text-[#FDA7DF]">
                     Payment Page
                 </h1>

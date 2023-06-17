@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useClasses from "../../../hooks/useClasses";
 
 const SelectedClasses = ({ classesID, userEmail }) => {
     const [classes, loading] = useClasses();
     const [selectedClasses, setSelectedClasses] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         !loading &&
@@ -40,6 +41,17 @@ const SelectedClasses = ({ classesID, userEmail }) => {
         return totalPrice?.toFixed(2);
     };
 
+    const handlePayment = () => {
+        const price = calculateTotalPrice(selectedClasses);
+        if (price > 0) {
+            navigate("/payment", {
+                state: { price },
+            });
+        } else {
+            alert("Please Select any class before pay.");
+        }
+    };
+
     return (
         <div className="overflow-auto">
             <div className="text-white font-semibold xs:font-bold flex flex-col xs:flex-row gap-3 xs:justify-between mb-5">
@@ -49,13 +61,12 @@ const SelectedClasses = ({ classesID, userEmail }) => {
                 <h3 className="text-2xl">
                     Total Price: ${calculateTotalPrice(selectedClasses)}
                 </h3>
-                <NavLink
-                    to="/payment"
-                    state={{ price: calculateTotalPrice(selectedClasses) }}
+                <button
+                    onClick={handlePayment}
                     className="btn btn-outline btn-secondary w-12"
                 >
                     Pay
-                </NavLink>
+                </button>
             </div>
             <table className="table table-xs min-w-[850px] text-white">
                 <thead>

@@ -40,14 +40,14 @@ const CheckoutForm = ({ price }) => {
                 import.meta.env.VITE_RHYTHMIC_SERVER
             }/api/create-payment-intent?price=${price}`
         );
-        console.log(res);
+        // console.log(res);
         const { clientSecret } = res.data;
         const { error } = await stripe.confirmPayment({
             //`Elements` instance that was used to create the Payment Element
             elements,
             clientSecret,
             confirmParams: {
-                return_url: `https://rhythmic-tunes.web.app/payment`,
+                return_url: `https://rhythmic-tunes.web.app/dashboard`,
             },
         });
 
@@ -57,7 +57,9 @@ const CheckoutForm = ({ price }) => {
             // details incomplete)
             setLoading(false);
             setErrorMessage(error.message);
+            console.log("in error scope");
         } else {
+            console.log("out error scope");
             const res = await axios.put(
                 `${
                     import.meta.env.VITE_RHYTHMIC_SERVER
