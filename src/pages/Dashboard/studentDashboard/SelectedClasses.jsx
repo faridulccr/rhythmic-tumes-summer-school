@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 import useClasses from "../../../hooks/useClasses";
 
 const SelectedClasses = ({ classesID, userEmail }) => {
@@ -36,7 +37,7 @@ const SelectedClasses = ({ classesID, userEmail }) => {
             (total, { price }) => total + parseFloat(price),
             0
         );
-        return totalPrice;
+        return totalPrice?.toFixed(2);
     };
 
     return (
@@ -48,12 +49,13 @@ const SelectedClasses = ({ classesID, userEmail }) => {
                 <h3 className="text-2xl">
                     Total Price: ${calculateTotalPrice(selectedClasses)}
                 </h3>
-                <a
-                    href={`/payment/${calculateTotalPrice(selectedClasses)}`}
+                <NavLink
+                    to="/payment"
+                    state={{ price: calculateTotalPrice(selectedClasses) }}
                     className="btn btn-outline btn-secondary w-12"
                 >
                     Pay
-                </a>
+                </NavLink>
             </div>
             <table className="table table-xs min-w-[850px] text-white">
                 <thead>

@@ -47,7 +47,7 @@ const CheckoutForm = ({ price }) => {
             elements,
             clientSecret,
             confirmParams: {
-                return_url: `https://rhythmic-tunes.web.app/payment/${price}`,
+                return_url: `https://rhythmic-tunes.web.app/payment`,
             },
         });
 

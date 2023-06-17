@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // stripe import
 import { Elements } from "@stripe/react-stripe-js";
@@ -10,11 +10,11 @@ import CheckoutForm from "./CheckoutForm";
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK); //published key (pk)
 
 const Payment = () => {
-    const { price } = useParams();
+    const location = useLocation();
 
     const options = {
         mode: "payment",
-        amount: Math.floor(price * 100),
+        amount: Math.floor((location.state?.price || 0) * 100),
         currency: "usd",
         // Fully customizable with appearance API.
         appearance: {
@@ -30,7 +30,7 @@ const Payment = () => {
                 </h1>
                 <div className="bg-[rgba(255,255,255,0.5)] p-10 rounded">
                     <Elements stripe={stripePromise} options={options}>
-                        <CheckoutForm price={price} />
+                        <CheckoutForm price={location.state?.price} />
                     </Elements>
                 </div>
             </div>
