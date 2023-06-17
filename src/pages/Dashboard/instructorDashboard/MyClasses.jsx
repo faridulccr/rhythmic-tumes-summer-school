@@ -8,7 +8,7 @@ const MyClasses = ({ email }) => {
         <div className="overflow-auto">
             <table className="table table-xs min-w-[650px] text-white">
                 <thead>
-                    <tr className="text-white">
+                    <tr className="text-white text-center">
                         <th></th>
                         <th>Status</th>
                         <th>Class Name</th>
@@ -33,7 +33,7 @@ const MyClasses = ({ email }) => {
                                 },
                                 i
                             ) => (
-                                <tr key={_id}>
+                                <tr key={_id} className=" text-center">
                                     <th>{i + 1}</th>
                                     <td>{status}</td>
                                     <td>{name}</td>

@@ -40,7 +40,7 @@ const Classes = () => {
     const handleSelect = async (id) => {
         // if does not logged in
         if (!currentUser) {
-            navigate("/login");
+            navigate("/login", { state: { from: "/classes" } });
             alert("You have to log in first to select a class.");
         } else {
             // update userData

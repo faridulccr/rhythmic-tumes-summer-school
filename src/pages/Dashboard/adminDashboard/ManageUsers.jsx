@@ -43,7 +43,7 @@ const ManageUsers = ({ adminEmail }) => {
         <div className="overflow-auto">
             <table className="table table-xs min-w-[650px] text-white">
                 <thead>
-                    <tr className="text-white">
+                    <tr className="text-white text-center">
                         <th></th>
                         <th>Image</th>
                         <th>Name</th>
@@ -57,7 +57,7 @@ const ManageUsers = ({ adminEmail }) => {
                     {!loading &&
                         Array.isArray(allUsers) &&
                         allUsers.map(({ _id, name, image, email, role }, i) => (
-                            <tr key={_id}>
+                            <tr key={_id} className=" text-center">
                                 <th>{i + 1}</th>
                                 <td>
                                     <img

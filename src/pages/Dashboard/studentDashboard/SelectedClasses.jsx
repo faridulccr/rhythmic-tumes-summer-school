@@ -31,11 +31,33 @@ const SelectedClasses = ({ classesID, userEmail }) => {
         }
     };
 
+    const calculateTotalPrice = (selectedClass) => {
+        const totalPrice = selectedClass.reduce(
+            (total, { price }) => total + parseFloat(price),
+            0
+        );
+        return totalPrice;
+    };
+
     return (
         <div className="overflow-auto">
+            <div className="text-white font-semibold xs:font-bold flex flex-col xs:flex-row gap-3 xs:justify-between mb-5">
+                <h3 className="text-2xl">
+                    Total Classes: {selectedClasses.length}
+                </h3>
+                <h3 className="text-2xl">
+                    Total Price: ${calculateTotalPrice(selectedClasses)}
+                </h3>
+                <a
+                    href={`/payment/${calculateTotalPrice(selectedClasses)}`}
+                    className="btn btn-outline btn-secondary w-12"
+                >
+                    Pay
+                </a>
+            </div>
             <table className="table table-xs min-w-[850px] text-white">
                 <thead>
-                    <tr className="text-white">
+                    <tr className="text-white text-center">
                         <th></th>
                         <th>Class Name</th>
                         <th>Instructor</th>
@@ -44,7 +66,6 @@ const SelectedClasses = ({ classesID, userEmail }) => {
                         <th>Price</th>
                         <th>Enrolled Students</th>
                         <th>Remove</th>
-                        <th>Pay</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,7 +84,7 @@ const SelectedClasses = ({ classesID, userEmail }) => {
                                 },
                                 i
                             ) => (
-                                <tr key={_id}>
+                                <tr key={_id} className="text-center">
                                     <th>{i + 1}</th>
                                     <td>{name}</td>
                                     <td>{instructor}</td>
@@ -77,14 +98,6 @@ const SelectedClasses = ({ classesID, userEmail }) => {
                                             onClick={() => handleDelete(_id)}
                                             size={24}
                                         />
-                                    </td>
-                                    <td>
-                                        <a
-                                            href={`/payment/${_id}`}
-                                            className="btn btn-outline btn-secondary"
-                                        >
-                                            Pay
-                                        </a>
                                     </td>
                                 </tr>
                             )
