@@ -42,16 +42,17 @@ const Instructors = () => {
                                 <div className="card-body text-white">
                                     <h2 className="card-title">Name: {name}</h2>
                                     <p>Email: {email}</p>
-                                    <p>Class Taken: {classesTaken}</p>
+                                    <p>Class Taken: {classesTaken || " 0"}</p>
                                     <p>
                                         <b>
                                             Classes:
-                                            {classes.length > 0 &&
-                                                classes.join(", ")}
+                                            {classes?.length > 0
+                                                ? classes.join(", ")
+                                                : " No Class"}
                                         </b>
                                     </p>
                                     <p className=" text-[#0f1744f5] font-bold">
-                                        Number of Students: {students}
+                                        Number of Students: {students || " 0"}
                                     </p>
                                     <div className="card-actions justify-end">
                                         <a
